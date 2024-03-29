@@ -14,7 +14,7 @@ RSpec.describe Spacecraft do
           ['land', 9.807]    # Land back on Earth
         ]
 
-        spacecraft = Spacecraft.new(mass, flight_route)
+        spacecraft = described_class.new(mass, flight_route)
         total_fuel_needed = spacecraft.calculate_fuel
         expect(total_fuel_needed).to eq(51898)
       end
@@ -28,7 +28,7 @@ RSpec.describe Spacecraft do
           ['land', 9.807]    # Land back on Earth
         ]
 
-        spacecraft = Spacecraft.new(mass, flight_route)
+        spacecraft = described_class.new(mass, flight_route)
         total_fuel_needed = spacecraft.calculate_fuel
         expect(total_fuel_needed).to eq(33388)
       end
@@ -44,7 +44,7 @@ RSpec.describe Spacecraft do
           ['land', 9.807]    # Land back on Earth
         ]
 
-        spacecraft = Spacecraft.new(mass, flight_route)
+        spacecraft = described_class.new(mass, flight_route)
         total_fuel_needed = spacecraft.calculate_fuel
         expect(total_fuel_needed).to eq(212_161)
       end
@@ -55,7 +55,7 @@ RSpec.describe Spacecraft do
         mass = -100
         flight_route = [['launch', 9.807]]
 
-        expect { Spacecraft.new(mass, flight_route) }
+        expect { described_class.new(mass, flight_route) }
           .to raise_error(ArgumentError, 'Spacecraft mass must be greater than or equal to 0')
       end
     end
@@ -65,7 +65,7 @@ RSpec.describe Spacecraft do
         mass = 1000
         flight_route = []
 
-        spacecraft = Spacecraft.new(mass, flight_route)
+        spacecraft = described_class.new(mass, flight_route)
         total_fuel_needed = spacecraft.calculate_fuel
         expect(total_fuel_needed).to eq(0)
       end
@@ -81,7 +81,7 @@ RSpec.describe Spacecraft do
           ['land', 9.807]
         ]
 
-        spacecraft = Spacecraft.new(mass, flight_route)
+        spacecraft = described_class.new(mass, flight_route)
         expect { spacecraft.calculate_fuel }.to raise_error(ArgumentError, 'Invalid directive value')
       end
     end
@@ -96,7 +96,7 @@ RSpec.describe Spacecraft do
           ['land', 9.807]
         ]
 
-        spacecraft = Spacecraft.new(mass, flight_route)
+        spacecraft = described_class.new(mass, flight_route)
         expect { spacecraft.calculate_fuel }.to raise_error(ArgumentError, 'Invalid gravity value')
       end
     end
