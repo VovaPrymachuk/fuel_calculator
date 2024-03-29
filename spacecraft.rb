@@ -13,7 +13,6 @@ class Spacecraft
     @spacecraft_mass = mass
     @mass = mass
     @flight_route = flight_route.reverse
-    @total_fuel = 0
   end
 
   def calculate_fuel
@@ -23,7 +22,6 @@ class Spacecraft
 
       fuel_needed = calculate_basic_fuel(gravity, directive)
       additional_fuel = calculate_additional_fuel(fuel_needed, gravity, directive)
-      @total_fuel += fuel_needed + additional_fuel
       @mass += fuel_needed + additional_fuel
     end
 
