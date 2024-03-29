@@ -18,21 +18,25 @@ Before you begin, make sure you have the following programs installed:
 1. Clone the repository:
 
 ```sh
-git clone https://github.com/username/repository.git
+git clone https://github.com/VovaPrymachuk/fuel_calculator.git
+```
 
 2. Navigate to the project folder:
 
 ```sh
 cd fuel_calculator
+```
 
 3. Install dependencies:
 
 ```sh
 bundle
+```
 
 4. Running the Tests
 
 ```sh
 bundle exec rspec
+```
 
-Tests contain 3 cases of space missions: Apollo 11, Mission to Mars, Passenger.
+Tests contain 3 cases of space missions: Apollo 11, Mission to Mars, and Passenger.
